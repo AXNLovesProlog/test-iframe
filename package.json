@@ -3,12 +3,20 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
+    "~toto": "parcel toto.html --no-autoinstall",
+    "~iframe": "parcel iframe.html --no-autoinstall",
     "~index": "parcel index.html --no-autoinstall"
   },
   "devDependencies": {
+    "@type-config/strict": "^1.2.1",
+    "@types/react": "^18.2.6",
     "autoprefixer": "10.4.14",
+    "classnames": "2.3.2",
     "parcel": "2.8.3",
     "postcss": "8.4.23",
+    "process": "^0.11.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "tailwindcss": "3.3.2"
   }
 }
