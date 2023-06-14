@@ -2,21 +2,26 @@ import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 
 const Index: React.FC = () => {
-  const [hash, setHash] = useState<string | undefined>(undefined);
+  const [path, setPath] = useState<string>("");
 
   return (
     <div className="grid grid-rows-[auto_1fr] gap-4 w-screen h-screen p-4 bg-slate-400">
       <div className="flex flex-col gap-4">
-        <button onClick={() => setHash(undefined)}>
-          <pre>undefined</pre>
+        <button onClick={() => setPath("")}>/</button>
+        <button onClick={() => setPath("/my-naos")}>/my-naos</button>
+        <button onClick={() => setPath("/my-naos/my-profile")}>
+          /my-naos/my-profile
         </button>
-        <button onClick={() => setHash("")}>#</button>
-        <button onClick={() => setHash("toto")}>#toto</button>
-        <button onClick={() => setHash("titi")}>#titi</button>
+        <button onClick={() => setPath("/my-naos/my-dashboard")}>
+          /my-naos/my-dashboard
+        </button>
+        <button onClick={() => setPath("/my-naos/my-dashboard/event")}>
+          /my-naos/my-dashboard/event
+        </button>
       </div>
 
       <iframe
-        src={`http://localhost:1234/${hash === undefined ? "" : `#${hash}`}`}
+        src={`http://localhost:3000${path}`}
         className="w-full h-full border-4 border-red-500"
       ></iframe>
     </div>
